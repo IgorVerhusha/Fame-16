@@ -455,8 +455,25 @@ body {
           }
         }
       }
+      .subtext {
+        background-color: #a0b6fb;
+        border-radius: 20px;
+        color: #090318;
+        font-weight: 700;
+        font-family: 'Poppins';
+        font-size: 9px;
+        line-height: 22px;
+        position: absolute;
+        width: 70px;
+        height: 16px;
+        bottom: -8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
     .pass {
+      cursor: pointer;
       margin: 38px 0 0 0;
       width: 290px;
       height: 54px;
@@ -472,6 +489,23 @@ body {
       transition: 0.3s background;
       &:hover {
         background: #d21326;
+      }
+
+      .subtext {
+        background-color: #ffffff;
+        border-radius: 20px;
+        color: #DA1616;
+        font-weight: 700;
+        font-family: 'Poppins';
+        font-size: 9px;
+        line-height: 22px;
+        position: absolute;
+        width: 70px;
+        height: 16px;
+        bottom: -8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

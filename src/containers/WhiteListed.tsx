@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 import { useRouter } from "next/router";
+import AddressBlock from "../components/AddressBlock";
 
 type Props = {
   onSetAccountAddress: Dispatch<SetStateAction<string>>;
@@ -85,15 +86,13 @@ const WhiteListed: FC<Props> = ({
                 </a>
               </div>
             </div>
-            <div className="address">
-              {`${accountAddress.slice(0, 23)}...`}
-              <button onClick={handleRemoveAccountAddress}>
-                <span></span>
-                <span></span>
-              </button>
-            </div>
+            <AddressBlock
+              accountAddress={accountAddress}
+              onClick={handleRemoveAccountAddress}
+            />
             <div className="pass" onClick={handleClaim}>
-              CLAIM YOUR FAME PASS 16
+              YOU ARE NOT ELIGIBLE!
+              <div className="subtext">REFRESH</div>
             </div>
           </div>
         </>
@@ -110,13 +109,10 @@ const WhiteListed: FC<Props> = ({
               CONGRATS YOU ARE ON THE WHITELIST CONTINUE TO CLAIM YOUR FAME MMA
               16 PASS
             </p>
-            <div className="address">
-              {`${accountAddress.slice(0, 23)}...`}
-              <button onClick={handleRemoveAccountAddress}>
-                <span></span>
-                <span></span>
-              </button>
-            </div>
+            <AddressBlock
+              accountAddress={accountAddress}
+              onClick={handleRemoveAccountAddress}
+            />
             <div className="pass" onClick={handleClaim}>
               CLAIM YOUR FAME PASS 16
             </div>
