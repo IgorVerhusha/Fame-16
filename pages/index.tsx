@@ -7,6 +7,7 @@ import Footer from '../src/containers/Footer';
 export default function Home() {
   const [accountAddress, setAccountAddress] = useState("");
   const [pageIsInit, setPageIsInit] = useState(false);
+  const [isEl, setIsEl] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setPageIsInit(true), 1700);
@@ -24,12 +25,13 @@ export default function Home() {
           <WhiteListed
             onSetAccountAddress={setAccountAddress}
             accountAddress={accountAddress}
+            isEl={isEl}
           />
         )}
         {!accountAddress && (
           <ConnectMetamask onSetAccountAddress={setAccountAddress} />
         )}
-        <Footer />
+        <Footer isEl={isEl} setIsEl={setIsEl}/>
       </>}
     </div>
   );

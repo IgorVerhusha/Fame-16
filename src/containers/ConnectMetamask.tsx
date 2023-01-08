@@ -50,9 +50,6 @@ const ConnectMetamask: FC<Props> = ({ onSetAccountAddress }) => {
     });
   }, []);
 
-
-  if (!isHaveMetamask) return <div>metamask is not exist</div>;
-
   return (
     <>
       <div className="blur"/>
