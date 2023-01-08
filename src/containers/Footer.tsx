@@ -28,7 +28,9 @@ const Footer: FC<Props> = ({ isEl, setIsEl }) => {
         <p>Copyright ©2022. All rights reserved</p>
         <p>Powered by gamedevtube</p>
         {setIsEl && (
-          <button onClick={() => setIsEl(!isEl)}>is eligible: {isEl ? 'true' : 'false'}</button>
+          <button className="test-button" onClick={() => setIsEl(!isEl)}>
+            is eligible: {isEl ? "true" : "false"}
+          </button>
         )}
       </div>
     </footer>
