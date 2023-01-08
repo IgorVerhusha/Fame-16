@@ -16,7 +16,9 @@ const SuccessfullyClaimed = () => {
         alt=""
         className={`web ${isInit ? "claimed" : ""}`}
       />
-      <div className={`whitelisted ${isInit ? "active" : ""}`}>
+      <div
+        className={`whitelisted ${isInit ? "active" : ""}`}
+      >
         <img src="./../img/logo.png" alt="fame16" />
         <div className="gift">
           <h2>SUCESSFULLY CLAIMED</h2>

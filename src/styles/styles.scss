@@ -709,6 +709,11 @@ body {
 
 @media only screen and (max-width: 600px) {
   .wrapper {
+    .preloader {
+      top: 80px;
+      transform: translateY(-50%);
+    }
+
     .whitelisted {
       width: 293px !important;
 
