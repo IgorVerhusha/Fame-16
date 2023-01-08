@@ -16,7 +16,7 @@ const WhiteListed: FC<Props> = ({ onSetAccountAddress, accountAddress }) => {
   const handleRemoveAccountAddress = () => {
       onSetAccountAddress("");
   };
-  console.log('whitelisted');
+
   return (
     <>
       <div className="blur" />

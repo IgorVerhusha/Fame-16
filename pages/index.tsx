@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PagePreloader from "../src/components/PagePreloader";
 import WhiteListed from '../src/containers/WhiteListed';
 import ConnectMetamask from '../src/containers/ConnectMetamask';
+import Footer from '../src/containers/Footer';
 
 export default function Home() {
   const [accountAddress, setAccountAddress] = useState("");
@@ -28,28 +29,7 @@ export default function Home() {
         {!accountAddress && (
           <ConnectMetamask onSetAccountAddress={setAccountAddress} />
         )}
-        <footer>
-          <div className="social">
-            <a href="#" className="social-item">
-              <img src="./img/fb-icon.svg" alt=""/>
-            </a>
-            <a href="#" className="social-item">
-              <img src="./img/tw-icon.svg" alt=""/>
-            </a>
-            <a href="#" className="social-item">
-              <img src="./img/inst-icon.svg" alt=""/>
-            </a>
-            <a href="#" className="social-item">
-              <img src="./img/youtube-icon.svg" alt=""/>
-            </a>
-          </div>
-          <div className="footer-info">
-            <p>Terms and conditions</p>
-            <p>Privacy Policy</p>
-            <p>Copyright ©2022. All rights reserved</p>
-            <p>Powered by gamedevtube</p>
-          </div>
-        </footer>
+        <Footer />
       </>}
     </div>
   );
