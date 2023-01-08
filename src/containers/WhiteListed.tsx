@@ -1,13 +1,24 @@
-import React, { Dispatch, FC, SetStateAction, useState } from "react";
-import { useRouter } from 'next/router';
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
+import { useRouter } from "next/router";
 
 type Props = {
   onSetAccountAddress: Dispatch<SetStateAction<string>>;
   accountAddress: string;
-  isEl: boolean
+  isEl: boolean;
 };
 
-const WhiteListed: FC<Props> = ({ onSetAccountAddress, accountAddress, isEl }) => {
+const WhiteListed: FC<Props> = ({
+  onSetAccountAddress,
+  accountAddress,
+  isEl,
+}) => {
+  const [isInit, setIsInit] = useState(false);
   const [claimedWithError, setIsClaimedWithError] = useState(false);
   const router = useRouter();
 
@@ -17,19 +28,28 @@ const WhiteListed: FC<Props> = ({ onSetAccountAddress, accountAddress, isEl }) =
 
   const handleClaim = () => {
     if (!isEl) {
+      setIsInit(false);
       setIsClaimedWithError(true);
       return;
     }
     router.push(`claimed/${accountAddress}`);
   };
 
+  useEffect(() => {
+    setIsInit(true);
+  }, [isInit]);
+
   return (
     <>
       <div className="blur" />
       {claimedWithError ? (
         <>
-          <img src="./img/error-bg.png" alt="" className="error-web" />
-          <div className="whitelisted">
+          <img
+            src="./img/error-bg.png"
+            alt=""
+            className={`error-web ${isInit ? "active" : ""}`}
+          />
+          <div className={`whitelisted ${isInit ? "active" : ""}`}>
             <img src="./img/logo.png" alt="fame16" />
             <p className="sorry-text">
               Sorry, you are not eligible...But Wait! There are only 3 small
@@ -79,8 +99,12 @@ const WhiteListed: FC<Props> = ({ onSetAccountAddress, accountAddress, isEl }) =
         </>
       ) : (
         <>
-          <img src="./img/whitelisted-bg.png" alt="" className="web" />
-          <div className="whitelisted">
+          <img
+            src="./img/whitelisted-bg.png"
+            alt=""
+            className={`web ${isInit ? "active" : ""}`}
+          />
+          <div className={`whitelisted ${isInit ? "active" : ""}`}>
             <img src="./img/logo.png" alt="fame16" />
             <p>
               CONGRATS YOU ARE ON THE WHITELIST CONTINUE TO CLAIM YOUR FAME MMA

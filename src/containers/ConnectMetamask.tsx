@@ -9,7 +9,7 @@ function isMobileDevice() {
 }
 
 const ConnectMetamask: FC<Props> = ({ onSetAccountAddress }) => {
-  const [isHaveMetamask, setIsHaveMetamask] = useState(true);
+  const [isInit, setIsInit] = useState(false);
 
   const connectWallet = async () => {
     const { ethereum } = window;
@@ -33,6 +33,7 @@ const ConnectMetamask: FC<Props> = ({ onSetAccountAddress }) => {
   };
 
   useEffect(() => {
+    setIsInit(true);
     if (!isMobileDevice()) {
       return;
     }
@@ -42,7 +43,6 @@ const ConnectMetamask: FC<Props> = ({ onSetAccountAddress }) => {
   useEffect(() => {
     const { ethereum } = window;
     if (!ethereum) {
-      setIsHaveMetamask(false);
       return;
     }
     window.ethereum.on('accountsChanged', async () => {
@@ -53,7 +53,7 @@ const ConnectMetamask: FC<Props> = ({ onSetAccountAddress }) => {
   return (
     <>
       <div className="blur"/>
-      <div className="welcome active">
+      <div className={`welcome ${isInit ? 'active' : ''}`}>
         <img src="./img/logo.png" alt="fame16"/>
         <p>Hello IN NFT FAME PASS CLAMING WEBSITE, PLEASE CLICK BUTTON BELOW TO CONNECT YOUR WALLET AND VERIFY IF YOU
           ARE WHITELISTED TO CLAIM PASS.</p>

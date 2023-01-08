@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const SuccessfullyClaimed = () => {
+  const [isInit, setIsInit] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setIsInit(true);
+  }, []);
+
   return (
     <>
-      <img src="./../img/whitelisted-bg.png" alt="" className="web claimed" />
-      <div className="whitelisted">
+      <img
+        src="./../img/whitelisted-bg.png"
+        alt=""
+        className={`web ${isInit ? "claimed" : ""}`}
+      />
+      <div className={`whitelisted ${isInit ? "active" : ""}`}>
         <img src="./../img/logo.png" alt="fame16" />
         <div className="gift">
           <h2>SUCESSFULLY CLAIMED</h2>
