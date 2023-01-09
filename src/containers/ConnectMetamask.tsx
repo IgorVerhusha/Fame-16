@@ -58,7 +58,7 @@ const ConnectMetamask: FC<Props> = ({ onSetAccountAddress }) => {
         <p>Hello IN NFT FAME PASS CLAMING WEBSITE, PLEASE CLICK BUTTON BELOW TO CONNECT YOUR WALLET AND VERIFY IF YOU
           ARE WHITELISTED TO CLAIM PASS.</p>
         <button className="connect" onClick={handleConnectWalletWithMobile}>CONNECT YOUR WALLET</button>
-        <div className="pass">CLAIM YOUR FAME PASS 16</div>
+        <div className="pass">CLAIM YOUR FAME PASS 17</div>
       </div>
     </>
   );

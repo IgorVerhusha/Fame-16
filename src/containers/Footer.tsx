@@ -23,10 +23,10 @@ const Footer: FC<Props> = ({ isEl, setIsEl }) => {
         </a>
       </div>
       <div className="footer-info">
-        <p>Terms and conditions</p>
-        <p>Privacy Policy</p>
+        <a href="#">Terms and conditions</a>
+        <a href="#" >Privacy Policy</a>
         <p>Copyright ©2022. All rights reserved</p>
-        <p>Powered by gamedevtube</p>
+        <a href="#" >Powered by Niftables</a>
         {setIsEl && (
           <button className="test-button" onClick={() => setIsEl(!isEl)}>
             is eligible: {isEl ? "true" : "false"}

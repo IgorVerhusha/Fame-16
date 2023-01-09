@@ -11,14 +11,24 @@ export default function Home() {
   const [windowInnerHeight, setWindowInnerHeight] = useState<number>();
 
   useEffect(() => {
-    setWindowInnerHeight(window.innerHeight);
     setTimeout(() => setPageIsInit(true), 1700);
+  }, []);
+
+  useEffect(() => {
+    if (window.innerHeight < 690) return
+    setWindowInnerHeight(window.innerHeight);
+    window.onresize = () => {
+      setWindowInnerHeight(window.innerHeight);
+    };
+    return () => {
+      window.onresize = null;
+    };
   }, []);
 
   return (
     <div
       className={`wrapper ${pageIsInit ? "active" : ""}`}
-      style={{ height: windowInnerHeight || "100vh" }}
+      style={{ height: windowInnerHeight || "" }}
     >
       <div
         className={`polygon ${pageIsInit && !accountAddress ? "active" : ""}`}

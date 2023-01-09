@@ -54,7 +54,7 @@ const WhiteListed: FC<Props> = ({
             <img src="./img/logo.png" alt="fame16" />
             <p className="sorry-text">
               Sorry, you are not eligible...But Wait! There are only 3 small
-              steps to claim your <b>NFT FAME PASS 16</b>
+              steps to claim your <b>NFT FAME PASS 17</b>
             </p>
             <div className="instruction">
               <div className="top-block">
@@ -90,10 +90,11 @@ const WhiteListed: FC<Props> = ({
               accountAddress={accountAddress}
               onClick={handleRemoveAccountAddress}
             />
-            <div className="pass" onClick={handleClaim}>
+            <div className="pass error" onClick={handleClaim}>
               YOU ARE NOT ELIGIBLE!
               <div className="subtext">REFRESH</div>
             </div>
+            <a href="" className="error-link">CHECK ON SECONDARY MARKET</a>
           </div>
         </>
       ) : (
@@ -107,14 +108,14 @@ const WhiteListed: FC<Props> = ({
             <img src="./img/logo.png" alt="fame16" />
             <p>
               CONGRATS YOU ARE ON THE WHITELIST CONTINUE TO CLAIM YOUR FAME MMA
-              16 PASS
+              17 PASS
             </p>
             <AddressBlock
               accountAddress={accountAddress}
               onClick={handleRemoveAccountAddress}
             />
             <div className="pass" onClick={handleClaim}>
-              CLAIM YOUR FAME PASS 16
+              CLAIM YOUR FAME PASS 17
             </div>
           </div>
         </>

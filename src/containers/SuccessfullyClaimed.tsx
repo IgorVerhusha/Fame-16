@@ -11,11 +11,9 @@ const SuccessfullyClaimed = () => {
 
   return (
     <>
-      <img
-        src="./../img/whitelisted-bg.png"
-        alt=""
-        className={`web ${isInit ? "claimed" : ""}`}
-      />
+      <video className={`whitelisted-video-bg ${isInit ? "active" : ""}`} autoPlay loop playsInline muted>
+        <source src="./../video/video-bg.mp4" type="video/mp4" />
+      </video>
       <div
         className={`whitelisted ${isInit ? "active" : ""}`}
       >
